@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Màu nền nhẹ */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+    margin: 0;
+}
+
+/*------------------ 1. LOGIN CONTAINER ------------------*/
+
+.login-container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/*------------------ 2. INPUT & FORM CONTROLS ------------------*/
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"], 
+input[type="password"],
+input[type="number"] {
+    /* Đảm bảo width 100% trong form cha nếu không dùng flex */
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #007bff; /* Màu xanh dương chủ đạo */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Thông báo lỗi */
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/*------------------ 3. MAIN CONTAINER (HỘP CHỨA CHÍNH) ------------------*/
+
+.main-container {
+    width: 90%; /* Tăng từ 80% lên 90% */
+    max-width: 1200px; /* Tăng giới hạn tối đa để chứa nhiều dữ liệu */
+    margin: 50px auto; /* Đảm bảo căn giữa theo chiều ngang */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.main-container h2 {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/*------------------ 4. DATA TABLES ------------------*/
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.data-table th {
+    background-color: #f0f0f0;
+    padding: 10px 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-weight: bold;
+}
+.data-table td {
+    padding: 8px 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.data-table td.mota, .data-table td.tenmh {
+    text-align: left !important;
+    white-space: normal; /* Cho phép mô tả xuống dòng */
+}
+.data-table a {
+    color: #007bff;
+    text-decoration: none;
+}
+.data-table a:hover {
+    text-decoration: underline;
+}
+
+/* Bảng Chi tiết */
+.detail-table {
+    width: 80%; 
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+.detail-table tr td:first-child {
+    font-weight: bold;
+    background-color: #f7f7f7;
+    width: 30%;
+}
+
+.btn-quaylai {
+    background-color: #f8d7da !important; /* Màu đỏ nhạt theo phác thảo */
+    border: 1px solid #f5c6cb !important; 
+    color: #721c24 !important; 
+    padding: 8px 15px; 
+    border-radius: 4px; 
+    text-decoration: none !important;
+    display: inline-block; 
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.btn-quaylai:hover {
+    background-color: #f5c6cb !important;
+}
+
+/* ... (Bổ sung CSS cho chữ ký) ... */
+.signature-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    text-align: center;
+    position: relative; /* Thêm position relative */
+}
+
+/* Căn chỉnh vị trí ngày tháng */
+.date-position {
+    position: absolute;
+    bottom: 100px; /* Đẩy lên trên chữ ký */
+    right: 0;
+    width: 45%; /* Cùng chiều rộng với khu vực Kí tên NV Kho */
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+/*------------------ 6. MAIN VIEW UTILITIES & BUTTONS ------------------*/
+
+/* Utility class để đặt button/link ở góc trên bên phải */
+.top-right-link {
+    position: absolute; /* Đặt tuyệt đối so với main-container hoặc body */
+    top: 20px;
+    right: 20px;
+}
+
+/* Kiểu cho nút chức năng chính (Tìm kiếm mặt hàng) */
+.main-function-btn {
+    display: inline-block;
+    background-color: #28a745; /* Màu xanh lá nổi bật */
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.main-function-btn:hover {
+    background-color: #1e7e34;
+    text-decoration: none;
+}
+
+/* Kiểu cho nút đăng xuất (Góc trên bên phải) */
+.logout-btn {
+    background: none;
+    border: none;
+    color: #dc3545; /* Màu đỏ */
+    padding: 5px 10px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logout-btn:hover {
+    color: #a71d2a;
+    text-decoration: underline;
+}
+
+/* Chỉnh lại main-container để có vị trí tương đối cho top-right-link */
+.main-container {
+    /* ... giữ nguyên các thuộc tính khác ... */
+    position: relative; /* Rất quan trọng để top-right-link hoạt động bên trong */
+}
+
+/* Kiểu cho nút chức năng chính (Dùng cho <input type="submit">) */
+.main-filter-btn { 
+    display: inline-block;
+    background-color: #28a745 !important; /* Màu xanh lá đậm */
+    color: white !important;             /* Chữ trắng */
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    border: none !important;
+    cursor: pointer;
+}
+
+.main-filter-btn:hover {
+    background-color: #1e7e34 !important;
+    text-decoration: none;
+}
